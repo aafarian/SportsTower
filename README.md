@@ -1,15 +1,17 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Welcome to SportsTower!
 
-This project has been created using **webpack-cli**, you can now run
+Project is WIP.
 
-```
-npm run build
-```
+To run the project:
 
-or
+To ensure you're using the correct node version, first run `nvm use` on the project top level.
 
-```
-yarn build
-```
+If you want to change your default to it, you can use: `nvm alias default 6.11.5`
 
-to bundle your application
+Open a terminal and run `nodemon config.js`
+Open another tab and run `webpack --watch`
+
+Keep these two running, nodemon will restart the server on any code changes, and webpack will rebundle bundle.js on code changes. TODO: Find solution where both run at once
+
+
+Go to localhost:3000
