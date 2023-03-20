@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <div>
       Welcome to the home page. Click here to go to&nbsp;
-      <Link to="/About">about!</Link>
+      <Link to="/About">abouthummus!</Link>
     </div>
   );
 }

@@ -4,6 +4,13 @@ Project is WIP.
 
 To run the project:
 
+Make sure you have webpack globally installed: `npm i -g webpack webpack-cli`
+Make sure you also have NVM installed: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash` or `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash`
+Make sure you have nodemon installed: `npm i -g nodemon`
+
+Install node modules: `npm i`
+
+
 To ensure you're using the correct node version, first run `nvm use` on the project top level.
 
 If you want to change your default to it, you can use: `nvm alias default 6.11.5`
