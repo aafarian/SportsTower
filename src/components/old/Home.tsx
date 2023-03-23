@@ -15,7 +15,7 @@ export const Home = () => {
   return (
     <div className={classes.description}>
       Welcome to the home page. Click here to go to&nbsp;
-      <Link to="/About">abouthummus!</Link>
+      <Link to="about">abouthummus!</Link>
     </div>
   );
 }

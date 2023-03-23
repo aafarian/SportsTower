@@ -1,3 +1,4 @@
-export * from './About';
-export * from './Contact';
-export * from './Home';
+export * from './Login';
+export * from './Picks';
+export * from './Picked';
+export * from './Result';
