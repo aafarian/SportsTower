@@ -6,11 +6,11 @@ function App () {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={ <Login/> } />
-        <Route path="/picks" element={ <Picks/> } />
+        <Route path="/login" element={ <Login/> } />
+        <Route path="/" element={ <Picks /> } />
       </Routes>
     </div>
-  )
+  );
 }
 
 export default App;
