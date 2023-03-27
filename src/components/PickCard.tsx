@@ -13,14 +13,19 @@ const useStyles = createUseStyles({
   }
 });
 
-interface props {
+interface PlayerData {
   name: string
   proj: string
-  onSelect?: (props: props) => void
+}
+
+interface PickCardProps {
+  name: string
+  proj: string
+  onSelect: (props: PlayerData) => void
   callback?: React.MouseEventHandler<HTMLDivElement>
 }
 
-const PickCard = ({ name, proj, onSelect, callback }: props) => {
+const PickCard = ({ name, proj, onSelect, callback }: PickCardProps) => {
   const classes = useStyles();
 
   return (
