@@ -13,20 +13,25 @@ const useStyles = createUseStyles({
 	},
 })
 
-const PickCard = (props: {
+type props = {
 	name: string,
 	proj: string,
-	callback: React.MouseEventHandler<HTMLDivElement>
-}) => {
+	onSelect?: (props: props) => void,
+	callback?: React.MouseEventHandler<HTMLDivElement>
+}
+
+
+const PickCard = ({ name, proj, onSelect, callback }: props) => {
 	const classes = useStyles()
+
 	return (
 		<div
 			className={classes.card}
-			onClick={props.callback}
+			onClick={() => onSelect({ name, proj })}
 		>
-			{props.name}
+			{name}
 			<hr />
-			{props.proj}
+			{proj}
 		</div>
 	)
 }

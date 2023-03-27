@@ -77,9 +77,9 @@ const getPickCards = (data: Pick[]) => {
 					name={player.name}
 					proj={projection}
 					key={`${indexA}${indexB}`}
-					callback={(event: React.MouseEvent) => {
-						const cardData = event.currentTarget.innerHTML.split('<hr>')
-						console.log(cardData)
+					onSelect={({ name, proj }) => {
+						const cardData = { name, proj };
+						console.log(cardData);
 					}}
 				/>
 			)
