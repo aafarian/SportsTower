@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import { createUseStyles } from 'react-jss'
+import { createUseStyles } from 'react-jss';
 // import { useLocation } from 'react-router-dom'
 
 const useStyles = createUseStyles({
@@ -11,7 +11,7 @@ const useStyles = createUseStyles({
     maxWidth: 'fit-content',
     textAlign: 'center'
   }
-})
+});
 
 interface props {
   name: string
@@ -21,18 +21,18 @@ interface props {
 }
 
 const PickCard = ({ name, proj, onSelect, callback }: props) => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div
       className={classes.card}
-      onClick={() => { onSelect({ name, proj }) }}
+      onClick={() => { onSelect({ name, proj }); }}
     >
       {name}
       <hr />
       {proj}
     </div>
-  )
-}
+  );
+};
 
-export default PickCard
+export default PickCard;

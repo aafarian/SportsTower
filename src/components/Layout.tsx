@@ -1,6 +1,6 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
-import { createUseStyles } from 'react-jss'
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   background: {
@@ -33,11 +33,11 @@ const useStyles = createUseStyles({
     float: 'right',
     padding: '10px'
   }
-})
+});
 
 const Layout = (props: React.HTMLProps<HTMLElement>) => {
-  const location = useLocation()
-  const classes = useStyles()
+  const location = useLocation();
+  const classes = useStyles();
   return (
     <div className={classes.background}>
       <div className={classes.header}>
@@ -48,7 +48,7 @@ const Layout = (props: React.HTMLProps<HTMLElement>) => {
         {props.children}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

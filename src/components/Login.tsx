@@ -1,6 +1,6 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { createUseStyles } from 'react-jss'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   background: {
@@ -21,26 +21,26 @@ const useStyles = createUseStyles({
     width: 'fit-content',
     textAlign: 'center'
   }
-})
+});
 
 export const Login = () => {
-  const navigate = useNavigate()
-  const classes = useStyles()
+  const navigate = useNavigate();
+  const classes = useStyles();
   return (
     <div className={classes.background}>
       <div className={classes.login}>
         <h2>SPORTSTOWER</h2>
         <form
           onSubmit={(event) => {
-            event.preventDefault()
+            event.preventDefault();
             const username = (
               document.getElementById('username') as HTMLInputElement
-            ).value
+            ).value;
             navigate('picks', {
               state: {
                 username
               }
-            })
+            });
           }}
         >
           <label htmlFor="username">Enter a Username:</label>
@@ -51,5 +51,5 @@ export const Login = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};

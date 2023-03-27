@@ -1,6 +1,6 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import { Login, Picks } from './components/index'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Login, Picks } from './components/index';
 
 function App () {
   return (
@@ -10,7 +10,7 @@ function App () {
         <Route path="/" element={ <Picks /> } />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

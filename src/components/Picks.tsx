@@ -1,7 +1,7 @@
-import React from 'react'
-import Layout from './Layout'
-import PickCard from './PickCard'
-import { createUseStyles } from 'react-jss'
+import React from 'react';
+import Layout from './Layout';
+import PickCard from './PickCard';
+import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   container: {
@@ -30,7 +30,7 @@ const useStyles = createUseStyles({
     boxShadow: 'inset 0 0 0 .1rem white',
     overflow: 'auto'
   }
-})
+});
 
 interface Pick { name: string, proj: string[] }
 
@@ -67,7 +67,7 @@ const pickData: Pick[] = [
       'Smells burnt'
     ]
   }
-]
+];
 
 const getPickCards = (data: Pick[]) => {
   return data.map((player, indexA) => {
@@ -78,17 +78,17 @@ const getPickCards = (data: Pick[]) => {
           proj={projection}
           key={`${indexA}${indexB}`}
           onSelect={({ name, proj }) => {
-            const cardData = { name, proj }
-            console.log(cardData)
+            const cardData = { name, proj };
+            console.log(cardData);
           }}
         />
-      )
-    })
-  })
-}
+      );
+    });
+  });
+};
 
 export const Picks = (props: React.HTMLProps<HTMLElement>) => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <Layout>
       <div className={classes.container}>
@@ -101,5 +101,5 @@ export const Picks = (props: React.HTMLProps<HTMLElement>) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};

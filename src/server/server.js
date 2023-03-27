@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/build', express.static(path.join(__dirname, '../../build')));
 
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   //   console.log('wrote file', path.join(__dirname, '../../database.json'));
   // });
   res.sendFile(path.resolve(__dirname, '../../public', 'index.html'));
-})
+});
 
 // app.post('/paths', function(req, res) {
 //   console.log('in /message post');
