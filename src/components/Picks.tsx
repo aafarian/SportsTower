@@ -79,6 +79,7 @@ const getPickCards = (data: Pick[]) => {
           key={`${indexA}${indexB}`}
           onSelect={({ name, proj }) => {
             const cardData = { name, proj };
+            // load into redux
             console.log(cardData);
           }}
         />
@@ -89,6 +90,7 @@ const getPickCards = (data: Pick[]) => {
 
 export const Picks = (props: React.HTMLProps<HTMLElement>) => {
   const classes = useStyles();
+
   return (
     <Layout>
       <div className={classes.container}>

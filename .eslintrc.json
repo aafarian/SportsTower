@@ -8,6 +8,17 @@
         "standard-with-typescript"
     ],
     "overrides": [
+        {
+            "files": ["**/*.ts", "**/*.tsx"],
+            "plugins": [
+              "@typescript-eslint"
+            ],
+            "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+              "project": ["./tsconfig.json"]
+            }
+        }
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -28,6 +39,8 @@
       "react/jsx-indent-props": ["error", 2],
       "semi": [2, "always"],
       "@typescript-eslint/semi": "off",
-      "comma-dangle": "off"
+      "@typescript-eslint/comma-dangle": "off",
+      "comma-dangle": "off",
+      "no-tabs": "off"
     }
 }
