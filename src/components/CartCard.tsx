@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { createUseStyles } from 'react-jss';
-// import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment } from '../redux/slices/counterSlice';
 import { type RootState } from '../redux/store';
@@ -21,14 +20,14 @@ interface PlayerData {
   proj: string
 }
 
-interface PickCardProps {
+interface CartCardProps {
   name: string
   proj: string
   onSelect: (props: PlayerData) => void
   callback?: React.MouseEventHandler<HTMLDivElement>
 }
 
-const PickCard = ({ name, proj, onSelect, callback }: PickCardProps) => {
+const CartCard = ({ name, proj, onSelect, callback }: CartCardProps) => {
   const classes = useStyles();
   const count = useSelector((state: RootState) => state.counter.value);
   const dispatch = useDispatch();
@@ -50,4 +49,4 @@ const PickCard = ({ name, proj, onSelect, callback }: PickCardProps) => {
   );
 };
 
-export default PickCard;
+export default CartCard;

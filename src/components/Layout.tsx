@@ -40,10 +40,12 @@ const Layout = (props: React.HTMLProps<HTMLElement>) => {
   const classes = useStyles();
   return (
     <div className={classes.background}>
+      {/* TODO: Header component */}
       <div className={classes.header}>
         <span className={classes.logo}><h2>SPORTSTOWER</h2></span>
         <span className={classes.user}><h3>Logged in as {location.state?.username ?? 'Tester'}</h3></span>
       </div>
+      {/* END Header component */}
       <div className={classes.content}>
         {props.children}
       </div>
