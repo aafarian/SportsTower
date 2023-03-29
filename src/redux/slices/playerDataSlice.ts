@@ -4,12 +4,14 @@ interface Pick { projectionId: string, name: string, proj: string[] }
 
 export interface PlayerDataState {
   projections: Pick[]
-  selectedProjections: any
+  keyedSelectedProjections: any
+  allSelectedProjections: any
 }
 
 const initialState: PlayerDataState = {
   projections: [],
-  selectedProjections: {},
+  keyedSelectedProjections: {},
+  allSelectedProjections: [],
 };
 
 export const playerDataSlice = createSlice({
@@ -23,8 +25,9 @@ export const playerDataSlice = createSlice({
     playerClicked: (state, action: any) => {
       console.log('sportstower:debug:pushing player in redux', action.payload);
       // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-      if (!state.selectedProjections[action.payload.projectionId]) {
-        state.selectedProjections[action.payload.projectionId] = action.payload;
+      if (!state.keyedSelectedProjections[action.payload.projectionId]) {
+        state.keyedSelectedProjections[action.payload.projectionId] = action.payload;
+        state.allSelectedProjections.push(action.payload);
       }
     },
   }

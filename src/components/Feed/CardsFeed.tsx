@@ -32,7 +32,6 @@ const CardsFeed = () => {
   const dispatch = useDispatch();
   dispatch(populate(projectionsFixture));
   const data = useSelector((state: RootState) => state.playerData.projections);
-  console.log('1111 data is: ', data);
 
   return (
     <div className={classes.picks}>
