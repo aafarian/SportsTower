@@ -23,9 +23,11 @@ const CartCardList = () => {
   return (
     <div className={classes.cartCardList} id="cartCardList">
       <div>
-        { allSelectedProjections.map((player: any, ind: string) => {
+        { Object.keys(allSelectedProjections).map((projectionId: any, ind: number) => {
+          const playerName = allSelectedProjections[projectionId].name;
+          const playerProj = allSelectedProjections[projectionId].proj;
           // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-          return <CartCard key={`${player.name}${ind}`} name={player.name} proj={player.proj} />;
+          return <CartCard key={`${playerName}${ind}`} name={playerName} proj={playerProj} />;
         }) }
         {/* { JSON.stringify(selectedProjections) } */}
       </div>
