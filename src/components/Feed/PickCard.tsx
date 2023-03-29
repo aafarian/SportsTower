@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { createUseStyles } from 'react-jss';
-// import { useLocation } from 'react-router-dom'
 
 const useStyles = createUseStyles({
   card: {
@@ -14,24 +13,25 @@ const useStyles = createUseStyles({
 });
 
 interface PlayerData {
+  projectionId: string
   name: string
   proj: string
 }
 
 interface PickCardProps {
+  projectionId: string
   name: string
   proj: string
   onSelect: (props: PlayerData) => void
-  callback?: React.MouseEventHandler<HTMLDivElement>
 }
 
-const PickCard = ({ name, proj, onSelect, callback }: PickCardProps) => {
+const PickCard = ({ projectionId, name, proj, onSelect }: PickCardProps) => {
   const classes = useStyles();
 
   return (
     <div
       className={classes.card}
-      onClick={() => { onSelect({ name, proj }); }}
+      onClick={() => { onSelect({ projectionId, name, proj }); }}
     >
       {name}
       <hr />

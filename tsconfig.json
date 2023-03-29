@@ -1,4 +1,8 @@
 {
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+  ],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
