@@ -2,8 +2,8 @@ import React from 'react';
 
 import { createUseStyles } from 'react-jss';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment } from '../redux/slices/counterSlice';
-import { type RootState } from '../redux/store';
+import { decrement, increment } from '../../redux/slices/counterSlice';
+import { type RootState } from '../../redux/store';
 
 const useStyles = createUseStyles({
   card: {

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { type RootState } from '../../redux/store';
 
 const useStyles = createUseStyles({
-  selectedCards: {
+  cartCardList: {
     display: 'flex',
     flexDirection: 'column',
     width: '33%',
@@ -14,15 +14,17 @@ const useStyles = createUseStyles({
   },
 });
 
-export const SelectedCards = () => {
+const CartCardList = () => {
   const classes = useStyles();
   const selectedProjections = useSelector((state: RootState) => state.playerData.selectedProjections);
 
   return (
-    <div className={classes.selectedCards} id="selectedCards">
+    <div className={classes.cartCardList} id="cartCardList">
       <div>
         { JSON.stringify(selectedProjections) }
       </div>
     </div>
   );
 };
+
+export default CartCardList;
