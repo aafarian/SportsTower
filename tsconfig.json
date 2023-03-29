@@ -13,6 +13,7 @@
     "moduleResolution": "node",
     "allowJs": true,
     "strictNullChecks": true,
+    "declarationDir": "src",
   },
   "files": ["src/index.ts"]
 }
