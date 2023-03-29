@@ -12,8 +12,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "allowJs": true,
-    "strictNullChecks": true,
-    "declarationDir": "src",
+    "strictNullChecks": true
   },
   "files": ["src/index.ts"]
 }
