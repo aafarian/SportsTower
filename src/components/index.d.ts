@@ -1,5 +1,11 @@
+export interface PlayerData {
+  projectionId: string
+  playerName: string
+  projections: string[]
+}
+
 export interface CardData {
-  projID: string
+  projectionId: string
   playerName: string
   projection: string
 }

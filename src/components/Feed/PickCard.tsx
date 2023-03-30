@@ -14,13 +14,13 @@ const useStyles = createUseStyles({
   }
 });
 
-const PickCard = ({ projID, playerName, projection, onSelect }: PickCardProps) => {
+const PickCard = ({ projectionId, playerName, projection, onSelect }: PickCardProps) => {
   const classes = useStyles();
 
   return (
     <div
       className={classes.card}
-      onClick={() => { onSelect({ projID, playerName, projection }); }}
+      onClick={() => { onSelect({ projectionId, playerName, projection }); }}
     >
       {playerName}
       <hr />

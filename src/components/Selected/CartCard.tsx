@@ -2,6 +2,8 @@ import React from 'react';
 
 import { createUseStyles } from 'react-jss';
 
+import { type CardData } from '../index.d';
+
 const useStyles = createUseStyles({
   card: {
     background: 'grey',
@@ -12,14 +14,17 @@ const useStyles = createUseStyles({
   }
 });
 
-interface CartCardProps {
-  name: string
-  proj: string
-  // onSelect: (props: PlayerData) => void
+// type ou = boolean | null;
+
+interface CartCardProps extends CardData {
+  // name: string
+  // proj: string
+  // onSelect: (props: CardData) => void
   // callback?: React.MouseEventHandler<HTMLDivElement>
+  onClose?: (id: string) => void
 }
 
-const CartCard = ({ name, proj }: CartCardProps) => {
+const CartCard = ({ playerName, projection }: CartCardProps) => {
   const classes = useStyles();
 
   return (
@@ -27,9 +32,9 @@ const CartCard = ({ name, proj }: CartCardProps) => {
       className={classes.card}
       // onClick={() => { onSelect({ name, proj }); }}
     >
-      {name}
+      {playerName}
       <hr />
-      {proj}
+      {projection}
     </div>
   );
 };
