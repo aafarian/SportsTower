@@ -4,13 +4,17 @@ import { createUseStyles } from 'react-jss';
 
 import { type CardData } from '../index.d';
 
+import { Choice } from './Choice';
+
 const useStyles = createUseStyles({
   card: {
     background: 'grey',
     margin: '1rem',
     padding: '1rem',
-    maxWidth: 'fit-content',
-    textAlign: 'center'
+    width: 'flex',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'row',
   }
 });
 
@@ -30,11 +34,13 @@ const CartCard = ({ playerName, projection }: CartCardProps) => {
   return (
     <div
       className={classes.card}
-      // onClick={() => { onSelect({ name, proj }); }}
+    // onClick={() => { onSelect({ name, proj }); }}
     >
-      {playerName}
-      <hr />
-      {projection}
+      <div>
+        {playerName}<br />
+        {projection}
+      </div>
+      <Choice />
     </div>
   );
 };
