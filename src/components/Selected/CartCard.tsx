@@ -9,7 +9,8 @@ import { Choice } from './Choice';
 const useStyles = createUseStyles({
   card: {
     background: 'grey',
-    margin: '1rem',
+    margin: '.5rem',
+    marginBottom: '0',
     padding: '1rem',
     width: 'flex',
     textAlign: 'center',

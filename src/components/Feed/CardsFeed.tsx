@@ -19,7 +19,7 @@ const useStyles = createUseStyles({
   picks: {
     padding: '1rem',
     display: 'grid',
-    flex: '1',
+    flex: '3',
     gridTemplateColumns: 'repeat(3,1fr)',
     // gap: '1rem',
     boxShadow: 'inset 0 0 0 .1rem white',
