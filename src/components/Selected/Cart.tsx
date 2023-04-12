@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CartCardList from './CartCardList';
+import CartSubmit from './CartSubmit';
 
 import { createUseStyles } from 'react-jss';
 
@@ -28,7 +29,7 @@ function Cart (props: React.HTMLProps<HTMLElement>) {
   const classes = useStyles();
   return (<div className={classes.cart}>
     <CartCardList />
-    <button className={classes.submitButton}>LOCK IN</button>
+    <CartSubmit />
   </div>);
 }
 

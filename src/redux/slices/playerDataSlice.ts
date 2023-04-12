@@ -20,14 +20,18 @@ export const playerDataSlice = createSlice({
       console.log('sportstower:debug:populating in redux');
       state.projections = action.payload;
     },
-    playerClicked: (state, action) => {
+    playerAdded: (state, action) => {
       console.log('sportstower:debug:pushing player in redux', action.payload);
       state.allSelectedProjections[action.payload.projectionId] ??= action.payload;
     },
+    playerRemoved: (state, action) => {
+      console.log('sportstower:debug:pulling player in redux', action.payload);
+      delete state.allSelectedProjections[action.payload];
+    }
   }
 });
 
 // Action creators are generated for each case reducer function
-export const { playerClicked, populate } = playerDataSlice.actions;
+export const { playerAdded, playerRemoved, populate } = playerDataSlice.actions;
 
 export default playerDataSlice.reducer;

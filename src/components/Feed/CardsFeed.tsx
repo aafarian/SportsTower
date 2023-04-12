@@ -3,7 +3,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 // import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { populate, playerClicked } from '../../redux/slices/playerDataSlice';
+import { populate, playerAdded } from '../../redux/slices/playerDataSlice';
 import { type RootState } from '../../redux/store';
 import PickCard from './PickCard';
 import { projectionsFixture } from './../Fixtures/projectionsFixture';
@@ -46,7 +46,7 @@ const CardsFeed = () => {
                 key={`${indexA}${indexB}`}
                 onSelect={({ projectionId, playerName, projection }) => {
                   const cardData = { projectionId, playerName, projection };
-                  dispatch(playerClicked(cardData));
+                  dispatch(playerAdded(cardData));
                   console.log(cardData);
                 }}
               />
