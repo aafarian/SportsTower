@@ -8,7 +8,7 @@ import { type CardData } from '../index.d';
 
 import { playerRemoved } from '../../redux/slices/playerDataSlice';
 
-import { Choice } from './Choice';
+import Choice from './Choice';
 
 const useStyles = createUseStyles({
   card: {
