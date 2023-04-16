@@ -1,4 +1,5 @@
-export const projectionsFixture: Array<Record<string, unknown>> = [
+import { type PlayerData } from '../index.d';
+export const projectionsFixture: PlayerData[] = [
   {
     playerName: 'Hampig Beefcow',
     projections: [
@@ -27,7 +28,6 @@ export const projectionsFixture: Array<Record<string, unknown>> = [
     ]
   },
   {
-    projectionId: '1217',
     playerName: 'Amo Overflow',
     projections: [
       ['1514', 'Upset at the Moon'],

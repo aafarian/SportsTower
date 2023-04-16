@@ -37,17 +37,20 @@ const CardsFeed = () => {
     <div className={classes.picks}>
       {
         data.map((player, indexA) => {
+          // proj is a Projection, check components/index.d.ts
           return player.projections.map((proj, indexB) => {
+            // const proj = proj;
+            const [id, data] = proj;
             return (
               <PickCard
-                projectionId={proj[0]}
                 playerName={player.playerName}
-                projection={proj[1]}
+                projectionId={id}
+                projection={data}
                 key={`${indexA}${indexB}`}
                 onSelect={({ projectionId, playerName, projection }) => {
                   const cardData = { projectionId, playerName, projection };
                   dispatch(playerAdded(cardData));
-                  console.log(cardData);
+                  // console.log(cardData);
                 }}
               />
             );

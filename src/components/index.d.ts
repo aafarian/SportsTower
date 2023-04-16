@@ -1,7 +1,8 @@
+export type Projection = [string, string]
+
 export interface PlayerData {
-  projectionId: string
   playerName: string
-  projections: string[]
+  projections: Projection[]
 }
 
 export interface CardData {
