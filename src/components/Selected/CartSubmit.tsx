@@ -18,13 +18,9 @@ const useStyles = createUseStyles({
 function CartSubmit (props: React.HTMLProps<HTMLElement>) {
   const classes = useStyles();
   const allSelectedProjections: object = useSelector((state: RootState) => state.playerData.allSelectedProjections);
+  if (Object.keys(allSelectedProjections).length === 0) return <div />;
   return (<button className={classes.submitButton} onClick={() => {
-    //
-    if (Object.keys(allSelectedProjections).length === 0) {
-      console.log('empty cart');
-    } else {
-      console.log('check if cards are complete');
-    }
+    console.log('check if cards are complete');
   }}>LOCK IN</button>);
 }
 

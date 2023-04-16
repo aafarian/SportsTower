@@ -29,7 +29,11 @@ function Cart (props: React.HTMLProps<HTMLElement>) {
   const classes = useStyles();
   return (<div className={classes.cart}>
     <CartCardList />
-    <CartSubmit />
+    <CartSubmit onSubmit={
+      (event) => {
+        console.log('submit!');
+      }
+    } />
   </div>);
 }
 

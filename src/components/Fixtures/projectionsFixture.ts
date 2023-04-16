@@ -1,37 +1,39 @@
 export const projectionsFixture: Array<Record<string, unknown>> = [
   {
-    projectionId: '1214',
     playerName: 'Hampig Beefcow',
     projections: [
-      '100% not vegan',
-      'Almost 50% pork',
-      'Too old for veal',
-      'Star quarterback'
+      ['1214', '100% not vegan'],
+      ['1215', 'Almost 50% pork'],
+      ['1216', 'Too old for veal'],
+      ['1217', 'Star quarterback']
     ]
   },
   {
-    projectionId: '1215',
     playerName: 'Skhtor Sandwich',
-    projections: ['75% edible', 'Contains nuts', 'Raw or spread', 'Misunderstood']
+    projections: [
+      ['1314', '75% edible'],
+      ['1315', 'Contains nuts'],
+      ['1316', 'Raw or spread'],
+      ['1317', 'Misunderstood']
+    ]
   },
   {
-    projectionId: '1216',
     playerName: 'Barnaby Buzelian',
     projections: [
-      'Old as dirt',
-      'Alien conspiracist',
-      'Bone enthusiast',
-      'Snorts lint'
+      ['1414', 'Old as dirt'],
+      ['1415', 'Alien conspiracist'],
+      ['1416', 'Bone enthusiast'],
+      ['1417', 'Snorts lint']
     ]
   },
   {
     projectionId: '1217',
     playerName: 'Amo Overflow',
     projections: [
-      'Upset at the Moon',
-      'Absolutely zonked',
-      'Genius wizard',
-      'Smells burnt'
+      ['1514', 'Upset at the Moon'],
+      ['1515', 'Absolutely zonked'],
+      ['1516', 'Genius wizard'],
+      ['1517', 'Smells burnt']
     ]
   }
 ];

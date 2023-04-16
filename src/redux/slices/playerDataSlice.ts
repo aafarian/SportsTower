@@ -26,6 +26,7 @@ export const playerDataSlice = createSlice({
     },
     playerRemoved: (state, action) => {
       console.log('sportstower:debug:pulling player in redux', action.payload);
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
       delete state.allSelectedProjections[action.payload];
     }
   }

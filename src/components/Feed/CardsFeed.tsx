@@ -40,9 +40,9 @@ const CardsFeed = () => {
           return player.projections.map((proj, indexB) => {
             return (
               <PickCard
-                projectionId={player.projectionId}
+                projectionId={proj[0]}
                 playerName={player.playerName}
-                projection={proj}
+                projection={proj[1]}
                 key={`${indexA}${indexB}`}
                 onSelect={({ projectionId, playerName, projection }) => {
                   const cardData = { projectionId, playerName, projection };
