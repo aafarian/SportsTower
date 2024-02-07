@@ -36,8 +36,6 @@ const CardsFeed = () => {
     dispatch(populate(projectionsFixture));
   }, []);
 
-  console.log('1111 categories', categories);
-
   return (
     <div className={classes.picks}>
       {

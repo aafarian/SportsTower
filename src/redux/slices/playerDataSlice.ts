@@ -21,7 +21,7 @@ export const playerDataSlice = createSlice({
   initialState,
   reducers: {
     populate: (state, action) => {
-      console.log('sportstower:debug:populating in redux');
+      console.debug('SportsTower:debug:populating in redux');
       const allProjectionsByProjectionId: Record<string, Projection> = {};
       const allCategories: Record<string, boolean> = {};
 
@@ -47,11 +47,11 @@ export const playerDataSlice = createSlice({
     },
     playerAdded: (state, action) => {
       const { projectionId } = action.payload;
-      console.log('sportstower:debug:pushing player in redux', action.payload);
+      console.debug('SportsTower:debug:pushing player in redux', action.payload);
       state.allSelectedProjections[projectionId] = true;
     },
     playerRemoved: (state, action) => {
-      console.log('sportstower:debug:pulling player in redux', action.payload);
+      console.debug('SportsTower:debug:pulling player in redux', action.payload);
       const { projectionId } = action.payload;
       const newState = state.allSelectedProjections;
       // eslint-disable-next-line @typescript-eslint/no-dynamic-delete

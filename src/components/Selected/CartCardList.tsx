@@ -6,7 +6,6 @@ import CartCard from './CartCard';
 
 const CartCardList = () => {
   const allSelectedProjections = useSelector(projectionDataSelectors.selectAllPickedCards);
-  console.log('1111 all selected: ', allSelectedProjections);
 
   return (
     <div>

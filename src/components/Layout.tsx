@@ -1,8 +1,14 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
+import JerseyM54 from '../fonts/JerseyM54.ttf';
 
 const useStyles = createUseStyles({
+  '@font-face': {
+    fontFamily: 'SportsTowerDefault',
+    src: `url(${JerseyM54 as string})`,
+    fontWeight: 100,
+  },
   background: {
     position: 'absolute',
     left: '0px',
@@ -13,7 +19,9 @@ const useStyles = createUseStyles({
     width: '100vw',
     height: '100vh',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    fontFamily: 'Tahoma',
+    letterSpacing: '-0.3px',
   },
   header: {
     boxShadow: 'inset 0 0 0 .1rem white',
@@ -26,6 +34,7 @@ const useStyles = createUseStyles({
     overflow: 'auto'
   },
   logo: {
+    fontFamily: 'SportsTowerDefault',
     float: 'left',
     padding: '10px'
   },
@@ -42,8 +51,8 @@ const Layout = (props: React.HTMLProps<HTMLElement>) => {
     <div className={classes.background}>
       {/* TODO: Header component */}
       <div className={classes.header}>
-        <span className={classes.logo}><h2>SPORTSTOWER</h2></span>
-        <span className={classes.user}><h3>Logged in as {location.state?.username ?? 'Tester'}</h3></span>
+        <span className={classes.logo}><h1>SPORTSTOWER</h1></span>
+        <span className={classes.user}><h4>Logged in as {location.state?.username ?? 'Tester'}</h4></span>
       </div>
       {/* END Header component */}
       <div className={classes.content}>
