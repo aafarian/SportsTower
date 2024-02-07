@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { createUseStyles } from 'react-jss';
-// import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { populate, playerAdded } from '../../redux/slices/playerDataSlice';
-import { type RootState } from '../../redux/store';
 import PickCard from './PickCard';
 import { projectionsFixture } from './../Fixtures/projectionsFixture';
+import projectionDataSelectors from '../selectors/projectionDataSelectors';
+import categorySelectors from '../selectors/categorySelectors';
 
 const useStyles = createUseStyles({
   card: {
@@ -21,7 +21,6 @@ const useStyles = createUseStyles({
     display: 'grid',
     flex: '3',
     gridTemplateColumns: 'repeat(3,1fr)',
-    // gap: '1rem',
     boxShadow: 'inset 0 0 0 .1rem white',
     overflow: 'auto'
   }
@@ -30,31 +29,28 @@ const useStyles = createUseStyles({
 const CardsFeed = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  dispatch(populate(projectionsFixture));
-  const data = useSelector((state: RootState) => state.playerData.projections);
+  const data = useSelector(projectionDataSelectors.selectAllProjectionData);
+  const categories = useSelector(categorySelectors.selectAllCategories);
+
+  useEffect(() => {
+    dispatch(populate(projectionsFixture));
+  }, []);
+
+  console.log('1111 categories', categories);
 
   return (
     <div className={classes.picks}>
       {
-        data.map((player, indexA) => {
-          // proj is a Projection, check components/index.d.ts
-          return player.projections.map((proj, indexB) => {
-            // const proj = proj;
-            const [id, data] = proj;
-            return (
-              <PickCard
-                playerName={player.playerName}
-                projectionId={id}
-                projection={data}
-                key={`${indexA}${indexB}`}
-                onSelect={({ projectionId, playerName, projection }) => {
-                  const cardData = { projectionId, playerName, projection };
-                  dispatch(playerAdded(cardData));
-                  // console.log(cardData);
-                }}
-              />
-            );
-          });
+        data.map((projectionId, indexA) => {
+          return (
+            <PickCard
+              projectionId={projectionId}
+              key={`${indexA}player`}
+              onSelect={({ projectionId }) => {
+                dispatch(playerAdded({ projectionId }));
+              }}
+            />
+          );
         })
       }
     </div>

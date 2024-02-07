@@ -3,6 +3,8 @@ import React from 'react';
 import type { PickCardProps } from '../index.d';
 
 import { createUseStyles } from 'react-jss';
+import { useSelector } from 'react-redux';
+import projectionDataSelectors from '../selectors/projectionDataSelectors';
 
 const useStyles = createUseStyles({
   card: {
@@ -14,17 +16,20 @@ const useStyles = createUseStyles({
   }
 });
 
-const PickCard = ({ projectionId, playerName, projection, onSelect }: PickCardProps) => {
+const PickCard = ({ projectionId, onSelect }: PickCardProps) => {
+  const projectionData = useSelector(projectionDataSelectors.selectProjectionDataByProjectionId(projectionId));
+  const { playerName, category, value } = projectionData;
   const classes = useStyles();
 
   return (
     <div
       className={classes.card}
-      onClick={() => { onSelect({ projectionId, playerName, projection }); }}
+      onClick={() => { onSelect({ projectionId }); }}
     >
       {playerName}
       <hr />
-      {projection}
+      {category} -
+      {value}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface CounterState {
@@ -19,12 +19,9 @@ export const counterSlice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       state.value += 1;
-      console.log('1111 incremented to: ', state.value);
     },
     decrement: (state) => {
-      console.log('1111 state is: ', current(state));
       state.value -= 1;
-      console.log('1111 decremented to: ', state.value);
     },
     incrementByAmount: (state, action: PayloadAction<number>) => {
       state.value += action.payload;

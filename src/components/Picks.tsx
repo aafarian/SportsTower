@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './Layout';
 import { createUseStyles } from 'react-jss';
 import CardsFeed from './Feed/CardsFeed';
-import Cart from './Selected/Cart';
+import CartCardList from './Selected/CartCardList';
 
 const useStyles = createUseStyles({
   container: {
@@ -10,7 +10,7 @@ const useStyles = createUseStyles({
     display: 'flex',
     boxShadow: 'inset 0 0 0 .1rem white',
     overflow: 'hidden',
-    height: '100%',
+    height: '100%'
   },
 });
 
@@ -20,7 +20,7 @@ export const Picks = () => {
   return (
     <Layout>
       <div className={classes.container}>
-        <Cart />
+        <CartCardList />
         <CardsFeed />
       </div>
     </Layout>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { createUseStyles } from 'react-jss';
 
@@ -9,6 +9,7 @@ import { type CardData } from '../index.d';
 import { playerRemoved } from '../../redux/slices/playerDataSlice';
 
 import Choice from './Choice';
+import projectionDataSelectors from '../selectors/projectionDataSelectors';
 
 const useStyles = createUseStyles({
   card: {
@@ -28,29 +29,24 @@ const useStyles = createUseStyles({
   }
 });
 
-// type ou = boolean | null;
-
 interface CartCardProps extends CardData {
-  // name: string
-  // proj: string
-  // onSelect: (props: CardData) => void
-  // callback?: React.MouseEventHandler<HTMLDivElement>
   onClose?: (id: string) => void
 }
 
-const CartCard = ({ playerName, projection, projectionId, onClose }: CartCardProps) => {
+const CartCard = ({ projectionId, onClose }: CartCardProps) => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const projectionData = useSelector(projectionDataSelectors.selectProjectionDataByProjectionId(projectionId));
+  const { playerName, category, value } = projectionData;
 
   return (
     <div
       className={classes.card}
-    // onClick={() => { onSelect({ name, proj }); }}
     >
-      <button className={classes.close} onClick={() => { dispatch(playerRemoved(projectionId)); }}>x</button>
+      <button className={classes.close} onClick={() => { dispatch(playerRemoved({ projectionId })); }}>x</button>
       <div>
         {playerName}<br />
-        {projection}
+        {category} - {value}
       </div>
       <Choice />
     </div>
