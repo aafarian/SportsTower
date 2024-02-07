@@ -5,7 +5,7 @@ import JerseyM54 from '../fonts/JerseyM54.ttf';
 
 const useStyles = createUseStyles({
   '@font-face': {
-    fontFamily: 'SportsTowerDefault',
+    fontFamily: 'SportsTowerTitle',
     src: `url(${JerseyM54 as string})`,
     fontWeight: 100,
   },
@@ -34,7 +34,7 @@ const useStyles = createUseStyles({
     overflow: 'auto'
   },
   logo: {
-    fontFamily: 'SportsTowerDefault',
+    fontFamily: 'SportsTowerTitle',
     float: 'left',
     padding: '10px'
   },
