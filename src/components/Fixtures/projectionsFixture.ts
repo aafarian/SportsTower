@@ -1,37 +1,39 @@
-export const projectionsFixture: any = [
+import { type PlayerData } from '../index.d';
+export const projectionsFixture: PlayerData[] = [
   {
-    projectionId: '1214',
-    name: 'Hampig Beefcow',
-    proj: [
-      '100% not vegan',
-      'Almost 50% pork',
-      'Too old for veal',
-      'Star quarterback'
+    playerName: 'Hampig Beefcow',
+    projections: [
+      ['1214', '100% not vegan'],
+      ['1215', 'Almost 50% pork'],
+      ['1216', 'Too old for veal'],
+      ['1217', 'Star quarterback']
     ]
   },
   {
-    projectionId: '1215',
-    name: 'Skhtor Sandwich',
-    proj: ['75% edible', 'Contains nuts', 'Raw or spread', 'Misunderstood']
-  },
-  {
-    projectionId: '1216',
-    name: 'Barnaby Buzelian',
-    proj: [
-      'Old as dirt',
-      'Alien conspiracist',
-      'Bone enthusiast',
-      'Snorts lint'
+    playerName: 'Skhtor Sandwich',
+    projections: [
+      ['1314', '75% edible'],
+      ['1315', 'Contains nuts'],
+      ['1316', 'Raw or spread'],
+      ['1317', 'Misunderstood']
     ]
   },
   {
-    projectionId: '1217',
-    name: 'Amo Overflow',
-    proj: [
-      'Upset at the Moon',
-      'Absolutely zonked',
-      'Genius wizard',
-      'Smells burnt'
+    playerName: 'Barnaby Buzelian',
+    projections: [
+      ['1414', 'Old as dirt'],
+      ['1415', 'Alien conspiracist'],
+      ['1416', 'Bone enthusiast'],
+      ['1417', 'Snorts lint']
+    ]
+  },
+  {
+    playerName: 'Amo Overflow',
+    projections: [
+      ['1514', 'Upset at the Moon'],
+      ['1515', 'Absolutely zonked'],
+      ['1516', 'Genius wizard'],
+      ['1517', 'Smells burnt']
     ]
   }
 ];

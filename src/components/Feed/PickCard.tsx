@@ -1,5 +1,7 @@
 import React from 'react';
 
+import type { PickCardProps } from '../index.d';
+
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -12,30 +14,17 @@ const useStyles = createUseStyles({
   }
 });
 
-interface PlayerData {
-  projectionId: string
-  name: string
-  proj: string
-}
-
-interface PickCardProps {
-  projectionId: string
-  name: string
-  proj: string
-  onSelect: (props: PlayerData) => void
-}
-
-const PickCard = ({ projectionId, name, proj, onSelect }: PickCardProps) => {
+const PickCard = ({ projectionId, playerName, projection, onSelect }: PickCardProps) => {
   const classes = useStyles();
 
   return (
     <div
       className={classes.card}
-      onClick={() => { onSelect({ projectionId, name, proj }); }}
+      onClick={() => { onSelect({ projectionId, playerName, projection }); }}
     >
-      {name}
+      {playerName}
       <hr />
-      {proj}
+      {projection}
     </div>
   );
 };
