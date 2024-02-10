@@ -6,10 +6,10 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src",
     "build": "webpack --mode=production --node-env=production",
-    "start": "node build/main.js",
     "dev-start": "webpack --config webpack.config.js && nodemon config.js",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
+    "start": "nodemon config.js",
     "watch": "webpack --watch",
     "serve": "webpack serve"
   },

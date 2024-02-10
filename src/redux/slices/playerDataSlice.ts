@@ -1,15 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { CardData, PlayerData } from '../../components/index.d';
+import type { PlayerData, Projection } from '../../components/index.d';
 
 export interface PlayerDataState {
-  projections: PlayerData[]
-  allSelectedProjections: Record<string, CardData>
+  loading: boolean
+  projections: Record<string, Projection>
+  allSelectedProjections: Record<string, boolean>
+  allCategories: Record<string, boolean>
 }
 
 const initialState: PlayerDataState = {
-  projections: [],
+  loading: true,
+  projections: {},
   allSelectedProjections: {},
+  allCategories: {},
 };
 
 export const playerDataSlice = createSlice({
@@ -17,17 +21,42 @@ export const playerDataSlice = createSlice({
   initialState,
   reducers: {
     populate: (state, action) => {
-      console.log('sportstower:debug:populating in redux');
-      state.projections = action.payload;
+      console.debug('SportsTower:debug:populating in redux');
+      const allProjectionsByProjectionId: Record<string, Projection> = {};
+      const allCategories: Record<string, boolean> = {};
+
+      // map through all player data
+      action.payload.forEach((player: PlayerData) => {
+        const { playerName, playerImage } = player;
+        // map through their individual projections, index them by projectionId, save into allProjectionsByProjectionId before replacing state
+        player.projections.forEach((projection: Projection) => {
+          const { projectionId, category, value } = projection;
+          allProjectionsByProjectionId[projectionId] = {
+            playerName,
+            playerImage,
+            projectionId,
+            category,
+            value,
+          };
+          // greedily figure out what categories we have so far
+          allCategories[category] = true;
+        });
+      });
+      state.projections = allProjectionsByProjectionId;
+      state.allCategories = allCategories;
     },
     playerAdded: (state, action) => {
-      console.log('sportstower:debug:pushing player in redux', action.payload);
-      state.allSelectedProjections[action.payload.projectionId] ??= action.payload;
+      const { projectionId } = action.payload;
+      console.debug('SportsTower:debug:pushing player in redux', action.payload);
+      state.allSelectedProjections[projectionId] = true;
     },
     playerRemoved: (state, action) => {
-      console.log('sportstower:debug:pulling player in redux', action.payload);
+      console.debug('SportsTower:debug:pulling player in redux', action.payload);
+      const { projectionId } = action.payload;
+      const newState = state.allSelectedProjections;
       // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
-      delete state.allSelectedProjections[action.payload];
+      delete newState[projectionId];
+      state.allSelectedProjections = newState;
     }
   }
 });
