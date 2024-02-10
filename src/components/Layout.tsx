@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import JerseyM54 from '../fonts/JerseyM54.ttf';
 
@@ -49,6 +49,11 @@ const Layout = (props: React.HTMLProps<HTMLElement>) => {
   const classes = useStyles();
   return (
     <div className={classes.background}>
+      <Link to={`/results/myuserid`}>
+        <button>
+          Sample Results Page
+        </button>
+      </Link>
       {/* TODO: Header component */}
       <div className={classes.header}>
         <span className={classes.logo}><h1>SPORTSTOWER</h1></span>

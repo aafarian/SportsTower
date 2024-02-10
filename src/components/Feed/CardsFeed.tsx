@@ -6,7 +6,6 @@ import { populate, playerAdded } from '../../redux/slices/playerDataSlice';
 import PickCard from './PickCard';
 import { projectionsFixture } from './../Fixtures/projectionsFixture';
 import projectionDataSelectors from '../selectors/projectionDataSelectors';
-import categorySelectors from '../selectors/categorySelectors';
 
 const useStyles = createUseStyles({
   card: {
@@ -30,7 +29,6 @@ const CardsFeed = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const data = useSelector(projectionDataSelectors.selectAllProjectionData);
-  const categories = useSelector(categorySelectors.selectAllCategories);
 
   useEffect(() => {
     dispatch(populate(projectionsFixture));

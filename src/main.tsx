@@ -1,15 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import { store } from './redux/store';
-import { Provider } from 'react-redux';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Routes } from './routes';
 
-ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>,
-  </BrowserRouter>,
-  document.getElementById('root')
+const router = createBrowserRouter(Routes);
+
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+root.render(
+  <RouterProvider
+    router={router}
+    // TODO1: Loading element goes here, also figure out how to find loading state
+    // TODO1: Not found page?
+    fallbackElement={<div>TODO: Loading element</div>}
+  />,
 );
